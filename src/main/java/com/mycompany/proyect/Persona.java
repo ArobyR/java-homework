@@ -37,16 +37,15 @@ public class Persona {
 
     Persona(String nombre_,
             int edad_,
-            String cedula_,
             int peso_,
             int altura_,
             char sexo_) {
         this.nombre = nombre_;
         this.edad = edad_;
         this.sexo = sexo_;
-        this.cedula = cedula_; // quit cedula
         this.peso = peso_;
         this.altura = altura_;
+        this.generarCedula();
     }
 
     public void setNombre(String nombre_) {
@@ -110,13 +109,12 @@ public class Persona {
         if (calculateIdealPound < 20) {
             return pesoIdeal;
         }
-        if (calculateIdealPound >= 20 && calculateIdealPound <= 25) {
+        if (calculateIdealPound >= 20 && calculateIdealPound < 25) {
             return pesoDebajoDelIdeal;
         }
         if (calculateIdealPound > 25) {
             return sobrePeso;
         }
-
         return 0;
     }
 
@@ -141,6 +139,14 @@ public class Persona {
         return false;
     }
 
+    public void printValidacionEdad() {
+        if (this.esMayorDeEdad()) {
+            System.out.println("Es mayor de edad.");
+        } else {
+            System.out.println("Es menor de edad");
+        }
+    }
+
     private void comprobarSexo(char sexo) {
         if (sexo == 'H' || sexo == 'M') {
             this.sexo = sexo;
@@ -159,5 +165,21 @@ public class Persona {
             generator += String.valueOf(temp);
         }
         this.cedula = generator;
+    }
+
+    public void printEstadoDePeso() {
+        int indice = this.calcularPesoIdeal();
+        if (indice == 1) {
+            System.out.println("Esta en sobrepeso.");
+            return;
+        }
+        if (indice == 0) {
+            System.out.println("Esta por debajo de su peso ideal.");
+            return;
+        }
+        if (indice == -1) {
+            System.out.println("Esta en su peso ideal");
+        }
+
     }
 }

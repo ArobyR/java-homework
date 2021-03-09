@@ -18,7 +18,7 @@ public class mainClass {
      */
     public static void main(String[] args) {
         // TODO code application logic 
-        
+
         Scanner sc = new Scanner(System.in);
         String nombre;
         int edad, peso, altura;
@@ -71,16 +71,24 @@ public class mainClass {
         System.out.println(persona1.toString());
         System.out.println(persona2.toString());
         System.out.println(persona3.toString());
-        
+
         cuenta cuenta1 = new cuenta("The Flyer");
         cuenta cuenta2 = new cuenta("The Gigant", 20);
-        
+
         System.out.println(cuenta1.toString());
         System.out.println(cuenta2.toString());
-        
+
         Electrodomestico nevera = new Electrodomestico(20.1, 10, clasificacion.C, colores.AZUL);
         System.out.println(nevera.getColor());
         System.out.println(nevera.getConsumoEnergetico());
+
+        Videojuego game1 = new Videojuego();
+        Videojuego game2 = new Videojuego("buggifunck", 40);
+        Videojuego game3 = new Videojuego("The game", 300, "Shooter", "Ubisoft");
+
+        System.out.println(game1.toString());
+        System.out.println(game2.toString());
+        System.out.println(game3.toString());
     }
 
 }
