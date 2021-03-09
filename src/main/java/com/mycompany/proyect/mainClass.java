@@ -18,6 +18,7 @@ public class mainClass {
      */
     public static void main(String[] args) {
         // TODO code application logic 
+        
         Scanner sc = new Scanner(System.in);
         String nombre;
         int edad, peso, altura;
@@ -76,6 +77,10 @@ public class mainClass {
         
         System.out.println(cuenta1.toString());
         System.out.println(cuenta2.toString());
+        
+        Electrodomestico nevera = new Electrodomestico(20.1, 10, clasificacion.C, colores.AZUL);
+        System.out.println(nevera.getColor());
+        System.out.println(nevera.getConsumoEnergetico());
     }
 
 }
