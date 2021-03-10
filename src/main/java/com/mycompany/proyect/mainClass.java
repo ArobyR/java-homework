@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.proyect;
 
 import java.util.Scanner;
@@ -89,6 +84,18 @@ public class mainClass {
         System.out.println(game1.toString());
         System.out.println(game2.toString());
         System.out.println(game3.toString());
+
+        Libro libro1 = new Libro("978-978-978-2-1", "The Titanic", "JJP",
+                400, 20);
+        Libro libro2 = new Libro("978-978-978-2-1", "Gigant", "Patrick Morgan",
+                230, 30);
+        
+        if (libro1.getPrecio() > libro2.getPrecio()) {
+            System.out.println("El libro uno es mas caro");
+        }
+        else {
+            System.out.println("El libro dos es mas caro");
+        }
     }
 
 }
