@@ -22,7 +22,7 @@ public class Libro {
         this.precio = 0;
     }
 
-    Libro(String Isbn_, String titulo_, String autor_, int numeroPaginas_,
+        Libro(String Isbn_, String titulo_, String autor_, int numeroPaginas_,
             int precio_) {
         this.ISBN = Isbn_;
         this.titulo = titulo_;
