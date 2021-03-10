@@ -9,8 +9,18 @@ import java.util.Scanner;
 public class mainClass {
 
     /**
+     * @param libro1
+     * @param libro2
      * @param args the command line arguments
      */
+    static void printTheMostExpensiveBook(Libro libro1, Libro libro2) {
+        if (libro1.getPrecio() > libro2.getPrecio()) {
+            System.out.println("El libro uno es mas caro");
+        } else {
+            System.out.println("El libro dos es mas caro");
+        }
+    }
+
     public static void main(String[] args) {
         // TODO code application logic 
 
@@ -73,7 +83,8 @@ public class mainClass {
         System.out.println(cuenta1.toString());
         System.out.println(cuenta2.toString());
 
-        Electrodomestico nevera = new Electrodomestico(20.1, 10, clasificacion.C, colores.AZUL);
+        Electrodomestico nevera = new Electrodomestico(20.1, 10, clasificacion.C,
+                colores.AZUL);
         System.out.println(nevera.getColor());
         System.out.println(nevera.getConsumoEnergetico());
 
@@ -89,13 +100,9 @@ public class mainClass {
                 400, 20);
         Libro libro2 = new Libro("978-978-978-2-1", "Gigant", "Patrick Morgan",
                 230, 30);
-        
-        if (libro1.getPrecio() > libro2.getPrecio()) {
-            System.out.println("El libro uno es mas caro");
-        }
-        else {
-            System.out.println("El libro dos es mas caro");
-        }
+
+        printTheMostExpensiveBook(libro1, libro2);
+
     }
 
 }
